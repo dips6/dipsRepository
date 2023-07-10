@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class FacebookLogin {
 	
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		
@@ -15,8 +15,8 @@ public class FacebookLogin {
 		
 		WebDriver driver=new ChromeDriver(co);
 		driver.manage().window().maximize();
-		
-		Thread.sleep(2000);
+		driver.get("http://facebook.com");
+	
 		driver.close();
 	}
 

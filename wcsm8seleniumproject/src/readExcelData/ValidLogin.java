@@ -28,18 +28,18 @@ public class ValidLogin {
 		// read the valid username from ActiTimeTestData excel sheet
 		FileInputStream fis = new FileInputStream("./data/ActiTimeTestData.xlsx");
 		Workbook wb = WorkbookFactory.create(fis);
-		Sheet sheet = wb.getSheet("validcreds");
+		Sheet sheet = wb.getSheet("ValidCreds");
 		Row row = sheet.getRow(1);
 		Cell cell = row.getCell(0);
 		String validUsername = cell.getStringCellValue();
 		
 		// read the valid Password from ActiTimeTestData excel sheet
 		FileInputStream fis2 = new FileInputStream("./data/ActiTimeTestData.xlsx");
-		Workbook wb2 = WorkbookFactory.create(fis2);
-		Sheet sheet2 = wb2.getSheet("validcreds");
-		Row row2 = sheet2.getRow(1);
-		Cell cell2 = row2.getCell(1);
-		String validPassword = cell2.getStringCellValue();
+		Workbook wb1 = WorkbookFactory.create(fis2);
+		Sheet sheet1 = wb1.getSheet("ValidCreds");
+		Row row1 = sheet1.getRow(1);
+		Cell cell1 = row1.getCell(1);
+		String validPassword = cell1.getStringCellValue();
 		
 		Thread.sleep(2000);
 		driver.findElement(By.name("username")).sendKeys(validUsername);

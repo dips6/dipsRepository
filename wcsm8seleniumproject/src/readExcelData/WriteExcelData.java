@@ -17,8 +17,10 @@ public class WriteExcelData {
 		FileInputStream fis = new FileInputStream("./data/TestData.xlsx");
 		Workbook wb = WorkbookFactory.create(fis);
 		Sheet sheet = wb.getSheet("IPL");
-		Row row = sheet.getRow(1);
+		Row row = sheet.getRow(0);
+		//create the cell by using row(I)
 		Cell cell = row.createCell(2);
+		//write the data into cell
 		cell.setCellValue("BCCI");
 		
 		FileOutputStream fos = new FileOutputStream("./data/TestData.xlsx");

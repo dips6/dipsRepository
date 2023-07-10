@@ -14,16 +14,17 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 public class ReadMultipleData {
 	public static void main(String[] args) throws InterruptedException, EncryptedDocumentException, IOException
 	{
+		//Read multiple values or data from excel sheet by using for loop
 	for(int i=1;i<=10;i++)
 	{
 		FileInputStream fis = new FileInputStream("./data/TestData.xlsx");
 		Workbook wb = WorkbookFactory.create(fis); //make the file ready for read
 		Sheet sheet = wb.getSheet("IPL"); //get into sheet
-		Row row = sheet.getRow(1); //get into desired row
+		Row row = sheet.getRow(i); //get into desired row
 		Cell cell = row.getCell(0); //get into desired cell/col
 		String data = cell.getStringCellValue(); //get the value from cell/col
 		Thread.sleep(2000);
-	    System.out.println("data");
+	    System.out.println(data);
 	}
 	}
 }
